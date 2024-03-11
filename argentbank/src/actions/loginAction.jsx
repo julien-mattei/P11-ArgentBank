@@ -24,7 +24,6 @@ export const getUser = (headers) => {
     return (dispatch) => {
         return axios.post("http://localhost:3001/api/v1/user/profile", {}, headers ).then((res) => {
             dispatch({type: GET_USER, payload: res.data.body})
-            console.log(res.data.body)
         })
     }
 }

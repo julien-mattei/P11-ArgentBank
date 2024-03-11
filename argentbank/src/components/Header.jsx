@@ -1,7 +1,10 @@
+import { useSelector } from 'react-redux'
 import logo from '../assets/argentBankLogo.png'
 import {NavLink} from "react-router-dom"
 
+
 function Header () {
+    const user = useSelector((state) => state.userReducer)
     return <header>
         <nav className="main-nav">
             <NavLink className={"main-nav-logo"}>
