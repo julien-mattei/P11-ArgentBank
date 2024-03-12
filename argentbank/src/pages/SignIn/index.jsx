@@ -11,6 +11,14 @@ function SignIn () {
     const token = useSelector((state) => state.tokenReducer)
     const dispatch = useDispatch()
     const navigate = useNavigate()
+
+    useEffect(() => {
+        if (info.status === 200) {
+            sessionStorage.setItem("token", token)
+            navigate("/user")
+        }
+    }, [info.status, token, navigate])
+
     const handleForm = (e) => {
         e.preventDefault()
         const formData = {
@@ -19,10 +27,6 @@ function SignIn () {
         }
         dispatch(getLogin(formData))
         dispatch(getToken(formData))
-        if (info.status === 200) {
-            sessionStorage.setItem("token", token)
-            navigate("/user")
-        }
     }
 
     return <><main className="main bg-dark">

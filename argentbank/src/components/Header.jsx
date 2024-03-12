@@ -28,6 +28,7 @@ function Header () {
         sessionStorage.removeItem("token")
         setIsLogged(false)
         navigate("/login")
+        navigate(0)
     }
     return <header>
         <nav className="main-nav">
