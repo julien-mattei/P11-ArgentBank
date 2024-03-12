@@ -5,12 +5,15 @@ import Button from './Button'
 import {useState} from 'react'
 
 
+
+
 function Header () {
     const token = sessionStorage.getItem('token')
-    console.log(token)
     const [isLogged, setIsLogged] = useState(token !== null)
     const user = useSelector((state) => state.userReducer)
     const navigate = useNavigate()
+
+
     const handleLogin = () => {
         navigate("/login")
     }

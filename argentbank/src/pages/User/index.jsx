@@ -11,13 +11,11 @@ import Button from '../../components/Button'
 
 
 function User () {
+    const user = useSelector((state) => state.userReducer)
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(getUser())
     }, [dispatch])
-
-    const user = useSelector((state) => state.userReducer)
-
     const [isVisible, setIsVisible] = useState(false)
     const handleclick = () => {
         setIsVisible(!isVisible)
