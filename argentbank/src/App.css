@@ -11,6 +11,8 @@ html {
 }
 .main {
   flex: 1;
+  padding-bottom: 50px;
+  padding-top: 10px ;
 }
 
 .bg-dark {
@@ -45,6 +47,8 @@ html {
 .main-nav-item {
   text-decoration: none;
   margin-right: 0.5rem;
+  border: none;
+  background: none;
 }
 .main-nav-item:hover {
   text-decoration: underline;
@@ -56,6 +60,10 @@ html {
 .main-nav-logo-image {
   max-width: 100%;
   width: 200px;
+}
+.main-login {
+  display: flex;
+  gap: 5px;
 }
 .hero {
   background-image: url('../img/bank-tree.jpeg');

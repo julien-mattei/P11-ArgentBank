@@ -1,24 +1,23 @@
 
 import { useDispatch, useSelector} from 'react-redux'
 import './style.css'
-import { getUser } from '../../actions/loginAction'
+import { getUser } from '../../actions/userAction'
 import { useEffect, useState } from 'react'
 import Edit from '../../components/Edit'
 import Account from '../../components/Account'
+import Button from '../../components/Button'
 
 
 
 
 function User () {
     const dispatch = useDispatch()
-    const token = sessionStorage.getItem('token')
-    const headers = {
-        headers: {Authorization: `Bearer ${token}`}
-    }
     useEffect(() => {
-        dispatch(getUser(headers))
+        dispatch(getUser())
     }, [dispatch])
+
     const user = useSelector((state) => state.userReducer)
+
     const [isVisible, setIsVisible] = useState(false)
     const handleclick = () => {
         setIsVisible(!isVisible)
@@ -46,8 +45,7 @@ function User () {
         <main className="main bg-dark">
             <div className="header">
                 <h1>Welcome back<br />{user.firstName} {user.lastName}!</h1>
-                {isVisible && <Edit/>}
-                {isVisible ? "": <button onClick={handleclick} className="edit-button">Edit Name</button>}
+                {isVisible ? <Edit/> : <Button title="Edit Name" classe="edit-button" onClick={handleclick}/>}
             </div>
             <h2 className="sr-only">Accounts</h2>
                 {account.map((account, idx) => 
@@ -56,7 +54,6 @@ function User () {
                         title={account.title} 
                         amount={account.amount}
                         description={account.description}
-
                     />
                 )}
         </main>

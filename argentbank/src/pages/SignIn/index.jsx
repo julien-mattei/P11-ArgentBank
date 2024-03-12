@@ -1,9 +1,9 @@
-
 import { useRef } from 'react'
 import './style.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { getLogin, getToken } from '../../actions/loginAction'
 import { useNavigate } from 'react-router-dom'
+import Button from '../../components/Button'
 
 function SignIn () {
     const form = useRef()
@@ -11,7 +11,7 @@ function SignIn () {
     const token = useSelector((state) => state.tokenReducer)
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    const handleForm = async(e) => {
+    const handleForm = (e) => {
         e.preventDefault()
         const formData = {
             email: form.current[0].value,
@@ -23,16 +23,12 @@ function SignIn () {
             navigate("/user")
             sessionStorage.setItem("token", token)
         }
-        
-        
     }
-    console.log(info)
-    console.log(token)
     return <><main className="main bg-dark">
         <section className="sign-in-content">
             <i className="fa fa-user-circle sign-in-icon"></i>
             <h1>Sign In</h1>
-            <form ref={form} onSubmit={(e) => handleForm(e)}>
+            <form ref={form}>
                 <div className="input-wrapper">
                     <label>
                         Username
@@ -51,7 +47,7 @@ function SignIn () {
                         <input type="checkbox" id="remember-me" />
                     </label>
                 </div>
-                <button type="submit" className="sign-in-button">Sign In</button>
+                <Button title="Sign In" classe="sign-in-button" onClick={(e) => handleForm(e)}/>
             </form>
         </section>
         </main>

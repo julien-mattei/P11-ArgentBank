@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const GET_LOGIN = "GET_LOGIN"
 export const GET_TOKEN = "GET_TOKEN"
-export const GET_USER = "GET_USER"
+
 
 export const getLogin = (data) => {
     return async (dispatch) => {
@@ -20,10 +20,3 @@ export const getToken = (data) => {
 }
 
 
-export const getUser = (headers) => {
-    return (dispatch) => {
-        return axios.post("http://localhost:3001/api/v1/user/profile", {}, headers ).then((res) => {
-            dispatch({type: GET_USER, payload: res.data.body})
-        })
-    }
-}
