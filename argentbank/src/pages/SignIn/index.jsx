@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import './style.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { getLogin, getToken } from '../../actions/loginAction'
@@ -20,10 +20,11 @@ function SignIn () {
         dispatch(getLogin(formData))
         dispatch(getToken(formData))
         if (info.status === 200) {
-            navigate("/user")
             sessionStorage.setItem("token", token)
+            navigate("/user")
         }
     }
+
     return <><main className="main bg-dark">
         <section className="sign-in-content">
             <i className="fa fa-user-circle sign-in-icon"></i>

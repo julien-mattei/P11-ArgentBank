@@ -42,7 +42,7 @@ function User () {
     return <>
         <main className="main bg-dark">
             <div className="header">
-                <h1>Welcome back<br />{user.firstName} {user.lastName}!</h1>
+                <h1>Welcome back<br />{user.userinfo?.firstName} {user.userinfo?.lastName}!</h1>
                 {isVisible ? <Edit/> : <Button title="Edit Name" classe="edit-button" onClick={handleclick}/>}
             </div>
             <h2 className="sr-only">Accounts</h2>

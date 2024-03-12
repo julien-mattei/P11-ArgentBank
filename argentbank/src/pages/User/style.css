@@ -74,10 +74,10 @@
     }
   }
 
-  .transaction-header {
+.transaction {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
     border: 1px solid black;
     background-color: #fff;
     width: 80%;
@@ -85,16 +85,44 @@
     padding: 1.5rem;
     box-sizing: border-box;
     text-align: left;
-    margin-bottom: 2rem;
-  }
-  .form-edit {
+    margin-bottom: 2rem;  }
+.transaction-background {
+  display: flex;
+  flex-direction: column;
+  background-color: #00bc77;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  justify-content: center;
+}
+.transaction-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 25px;
+    padding-right: 10px;
+    color: white;
+}
+.transaction-header{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 50px;
+  margin-bottom: 10px;
+}
+.transaction-details{
+  display: flex;
+  align-items: center;
+  color: white;
+  gap: 10px;
+  padding-left: 25px;
+}
+.form-edit {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom:2rem ;
 
-  }
-  .form-edit-button {
+}
+.form-edit-button {
     display: flex;
     gap: 25px;
-  }
+}

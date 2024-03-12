@@ -2,17 +2,24 @@ import { useSelector } from 'react-redux'
 import logo from '../assets/argentBankLogo.png'
 import {NavLink, useNavigate} from "react-router-dom"
 import Button from './Button'
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 
 
 
 
 function Header () {
-    const token = sessionStorage.getItem('token')
-    const [isLogged, setIsLogged] = useState(token !== null)
+    const [isLogged, setIsLogged] = useState(null)
     const user = useSelector((state) => state.userReducer)
     const navigate = useNavigate()
-
+    useEffect(() => {
+        if(user.token) {
+            setIsLogged(true)
+        }
+        else {
+            setIsLogged(false)
+        }
+    }, [user]
+    )
 
     const handleLogin = () => {
         navigate("/login")
@@ -35,7 +42,7 @@ function Header () {
             <div className="main-login">
                 {isLogged ? (
                     <>
-                    <div>{user.userName}</div>
+                    <div>{user.userinfo.userName}</div>
                     <i className="fa fa-user-circle"></i>
                     <Button title="Sign Out" classe="main-nav-item" onClick={handleLogout}/>
                     </>

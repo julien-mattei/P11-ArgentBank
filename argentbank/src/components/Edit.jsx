@@ -31,13 +31,13 @@ function Edit () {
             <div className="input-wrapper">
                 <label >
                     Firstname : 
-                    <input type="text" id="firstname" value={user.firstName || ''} disabled/>
+                    <input type="text" id="firstname" value={user.userinfo.firstName || ''} disabled/>
                 </label>
             </div>
             <div className="input-wrapper">
                 <label >
                     Lastname : 
-                    <input type="text" id="lastname" value={user.lastName || ''} disabled/>
+                    <input type="text" id="lastname" value={user.userinfo.lastName || ''} disabled/>
                 </label>
             </div>
             <div className="form-edit-button">
