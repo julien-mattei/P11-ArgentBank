@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux'
-import logo from '../assets/argentBankLogo.png'
+import logo from '/argentBankLogo.webp'
 import {NavLink, useNavigate} from "react-router-dom"
 import Button from './Button'
 import {useEffect, useState} from 'react'

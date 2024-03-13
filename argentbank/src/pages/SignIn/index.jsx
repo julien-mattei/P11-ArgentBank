@@ -10,15 +10,16 @@ function SignIn () {
     const info = useSelector((state) => state.loginReducer)
     const token = useSelector((state) => state.tokenReducer)
     const dispatch = useDispatch()
-    const navigate = useNavigate()
+    
 
     useEffect(() => {
         if (info.status === 200) {
             sessionStorage.setItem("token", token)
             navigate("/user")
+            navigate(0)
         }
-    }, [info.status, token, navigate])
-
+    }, [info.status, token])
+    const navigate = useNavigate()
     const handleForm = (e) => {
         e.preventDefault()
         const formData = {

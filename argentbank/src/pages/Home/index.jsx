@@ -7,17 +7,17 @@ function Home () {
     const feature = [
       {
         "title":"You are our #1 priority",
-        "image":"/icon-chat.png",
+        "image":"/icon-chat.webp",
         "content":"Open a savings account with Argent Bank today!"
       },
       {
         "title":"More savings means higher rates",
-        "image": "/icon-money.png",
+        "image": "/icon-money.webp",
         "content":"The more you save with us, the higher your interest rate will be!"
       },
       {
         "title":"Security you can trust",
-        "image":"/icon-security.png",
+        "image":"/icon-security.webp",
         "content":"We use top of the line encryption to make sure your data and money is always safe."
       }
     ]
